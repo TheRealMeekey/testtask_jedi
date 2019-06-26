@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} {{ aspirant }} {% endblock %}
+{% block content %}
+    Имя: <h1>{{ object.name }}</h1>
+    Возраст: <h2>{{ object.age }}</h2>
+
+    {% for answer in object.aspirant.all %}
+        <p>Вопрос: {{ answer.question.text }}<br>
+            Ответ: {{ answer.answer|yesno:"Да,Нет" }}</p>
+    {% endfor %}
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit">
+    </form>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Академмия Джедаев - {% endblock %}</title>
+</head>
+<body>
+<a href="{% url 'home' %}" class="brand-logo">Академмия Джедаев</a>
+<ul class="right hide-on-med-and-down">
+    <li><a href="{% url 'jedi_list' %}">Список Джедаев</a></li>
+    <li><a href="{% url 'jedi_list_gt1' %}">Список Джедаев(Более одного падавана)</a></li>
+</ul>
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>

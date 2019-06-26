@@ -1,0 +1,7 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} Кандидаты для вас {% endblock %}
+{% block content %}
+    {% for aspirant in aspirants %}
+        <p><a href="{% url 'aspirant' aspirants_id=aspirant.id jedi_id=jedi_id %}">{{ aspirant.name }}</a></p>
+    {% endfor %}
+{% endblock %}

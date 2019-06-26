@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block title %} {{ block.super }} Главная {% endblock %}
+{% block content %}
+    <div class="row">
+        <div class="col s6">
+
+            <a href="{% url 'new_aspirant' %}" class="waves-effect waves-light btn-small">Кандидат</a>
+        </div>
+        <div class="col s6">
+            <a href="{% url 'select_jedi' %}" class="waves-effect waves-light btn-small">Джедай</a>
+        </div>
+    </div>
+{% endblock %}
